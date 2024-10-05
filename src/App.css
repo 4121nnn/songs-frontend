@@ -1,0 +1,30 @@
+body{
+    @apply bg-neutral-900 text-neutral-200
+}
+.filter-label{
+    @apply text-xs text-neutral-500
+}
+
+.filter-inputs {
+    @apply appearance-none p-0.5  rounded-l px-2 bg-neutral-900;
+}
+
+.page-button {
+    @apply border-2 p-2 rounded-xl hover:border-neutral-600 text-neutral-400 border-neutral-400
+}
+
+.page-button:disabled {
+    @apply opacity-50 cursor-not-allowed border-neutral-500;
+}
+
+.input {
+    @apply appearance-none p-3 rounded-l px-2 bg-neutral-900;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #2245e6, #ead223); /* Example gradient colors */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
