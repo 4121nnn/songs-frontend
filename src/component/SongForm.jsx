@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import {createSong, getSongById, updateSongById} from "../service/service.jsx";
+import { createSong, getSongById, updateSongById } from "../service/service.jsx";
 
 const SongForm = () => {
     const { id } = useParams(); // Get the ID from the URL parameters
@@ -9,7 +9,7 @@ const SongForm = () => {
         group: '',
         song: '',
         text: '',
-        releaseDate: '',
+        release_date: '',
         link: '',
     });
 
@@ -21,7 +21,7 @@ const SongForm = () => {
                     group: song.group,
                     song: song.song,
                     text: song.text,
-                    releaseDate: song.releaseDate,
+                    release_date: song.release_date,
                     link: song.link,
                 });
             }).catch(err => console.log(err));
@@ -38,14 +38,14 @@ const SongForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if(id){
+        if (id) {
             updateSongById(id, formData)
-                .then(res => {console.log(res);})
+                .then(res => { console.log(res); })
                 .catch(err => console.log(err));
-        }else{
-           createSong(formData)
-               .then(res => {console.log(res)})
-               .catch(err => console.log(err));
+        } else {
+            createSong(formData)
+                .then(res => { console.log(res) })
+                .catch(err => console.log(err));
         }
     };
 
@@ -59,13 +59,14 @@ const SongForm = () => {
                             Исполнитель:
                         </label>
                         <input
-                            className="input w-full" // Ensure input takes full width
+                            className="input w-full"
                             type="text"
                             id="group"
                             name="group"
                             value={formData.group}
                             onChange={handleChange}
                             required
+                            placeholder="Исполнитель"
                         />
                     </div>
                     <div className="mb-4"> {/* Added margin bottom for spacing */}
@@ -80,6 +81,7 @@ const SongForm = () => {
                             value={formData.song}
                             onChange={handleChange}
                             required
+                            placeholder="Песня"
                         />
                     </div>
                     <div className="mb-4"> {/* Added margin bottom for spacing */}
@@ -93,6 +95,7 @@ const SongForm = () => {
                             value={formData.text}
                             onChange={handleChange}
                             required
+                            placeholder="Текст песни"
                         />
                     </div>
                     <div className="mb-4"> {/* Added margin bottom for spacing */}
@@ -101,12 +104,13 @@ const SongForm = () => {
                         </label>
                         <input
                             className="input w-full" // Ensure input takes full width
-                            type="date"
-                            id="releaseDate"
-                            name="releaseDate"
-                            value={formData.releaseDate}
+                            type="text"
+                            id="release_date"
+                            name="release_date"
+                            value={formData.release_date}
                             onChange={handleChange}
                             required
+                            placeholder="16.02.2010"
                         />
                     </div>
                     <div className="mb-4 gap-1"> {/* Added margin bottom for spacing */}
@@ -115,12 +119,13 @@ const SongForm = () => {
                         </label>
                         <input
                             className="input w-full" // Ensure input takes full width
-                            type="url"
+                            type="text"
                             id="link"
                             name="link"
                             value={formData.link}
                             onChange={handleChange}
                             required
+                            placeholder="Cсылка"
                         />
                     </div>
                     <div className=" flex justify-between mt-4">

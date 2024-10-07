@@ -47,66 +47,70 @@ const FilterForm = ({ onSubmit }) => {
     return (
         <div className="bg-neutral-800 p-3 rounded-xl">
             <p className="text-neutral-400">Фильтр</p>
-        <form onSubmit={handleSubmit} className="flex flex-wrap gap-2">
-            <div className="flex-1 min-w-[200px]">
-                <label htmlFor="group" className="filter-label">Исполнитель</label>
-                <input
-                    type="text"
-                    name="group"
-                    id="group"
-                    value={songData.group}
-                    onChange={handleChange}
-                    className="filter-inputs w-full"
-                />
-            </div>
-            <div className="flex-1 min-w-[200px]">
-                <label htmlFor="song" className="filter-label">Песня</label>
-                <input
-                    type="text"
-                    name="song"
-                    id="song"
-                    value={songData.song}
-                    onChange={handleChange}
-                    className="filter-inputs w-full"
-                />
-            </div>
-            <div className="flex-1 min-w-[200px]">
-                <label htmlFor="text" className="filter-label">Текст песни</label>
-                <input
-                    name="text"
-                    id="text"
-                    value={songData.text}
-                    onChange={handleChange}
-                    className="filter-inputs w-full"
-                />
-            </div>
-            <div className="flex-1 min-w-[200px]">
-                <label htmlFor="releaseDate" className="filter-label">Дата выпуска</label>
-                <input
-                    type="date"
-                    name="releaseDate"
-                    id="releaseDate"
-                    value={songData.releaseDate}
-                    onChange={handleChange}
-                    className="filter-inputs w-full"
-                />
-            </div>
-            <div className="flex space-x-2">
-                <button
-                    type="submit"
-                    className="bg-green-900 text-white p-2 rounded"
-                >
-                    Фильтровать
-                </button>
-                <button
-                    type="button"
-                    onClick={handleClear}
-                    className="bg-gray-800 text-white p-2 rounded"
-                >
-                    Очистить
-                </button>
-            </div>
-        </form>
+            <form onSubmit={handleSubmit} className="flex flex-wrap gap-2">
+                <div className="flex-1 min-w-[200px]">
+                    <label htmlFor="group" className="filter-label">Исполнитель</label>
+                    <input
+                        type="text"
+                        name="group"
+                        id="group"
+                        value={songData.group}
+                        onChange={handleChange}
+                        className="filter-inputs w-full"
+                        placeholder="Исполнитель"
+                    />
+                </div>
+                <div className="flex-1 min-w-[200px]">
+                    <label htmlFor="song" className="filter-label">Песня</label>
+                    <input
+                        type="text"
+                        name="song"
+                        id="song"
+                        value={songData.song}
+                        onChange={handleChange}
+                        className="filter-inputs w-full"
+                        placeholder="Песня"
+                    />
+                </div>
+                <div className="flex-1 min-w-[200px]">
+                    <label htmlFor="text" className="filter-label">Текст песни</label>
+                    <input
+                        name="text"
+                        id="text"
+                        value={songData.text}
+                        onChange={handleChange}
+                        className="filter-inputs w-full"
+                        placeholder="Текст песни"
+                    />
+                </div>
+                <div className="flex-1 min-w-[200px]">
+                    <label htmlFor="releaseDate" className="filter-label">Дата выпуска</label>
+                    <input
+                        type="text"
+                        name="releaseDate"
+                        id="releaseDate"
+                        value={songData.releaseDate}
+                        onChange={handleChange}
+                        className="filter-inputs w-full"
+                        placeholder="16.02.2010"
+                    />
+                </div>
+                <div className="flex space-x-2">
+                    <button
+                        type="submit"
+                        className="bg-green-900 text-white p-2 rounded"
+                    >
+                        Фильтровать
+                    </button>
+                    <button
+                        type="button"
+                        onClick={handleClear}
+                        className="bg-gray-800 text-white p-2 rounded"
+                    >
+                        Очистить
+                    </button>
+                </div>
+            </form>
         </div>
     );
 };
